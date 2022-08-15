@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///Users/cameronayoung/hw4-cameron4young/exercise-2/index.html -->
+<html lang="en" class="mv-supports-atproperty"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Shopping list app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./Shopping list app_files/mavo.css">
+	<script src="./Shopping list app_files/mavo.js"></script>
+	<link rel="stylesheet" href="./Shopping list app_files/style.css">
+</head>
+
+<!-- You could save back to shopping.json, by using an mv-storage like https://github.com/designftw/hw4-yourname/exercise-1/shopping.json -->
+<body mv-app="mavo1" mv-storage="local" class="mv-autoedit mv-unsaved-changes" mv-init="shopping.json" typeof="Item" mv-permissions="read save edit add delete" mv-mode="edit" style=""><div class="mv-bar mv-ui"><!--mv-status--><button type="button" class="mv-edit">Editing</button><button type="button" class="mv-save">Save</button><!--mv-login--><!--mv-logout--></div>
+	<div style="background-color: #EDAFB8">
+	<!-- added contrasting color scheme which highlights certain boxes and allows for easier use -->
+		<p class="header">My Stores</p>
+		<!-- Button that clears the list, improves efficiency. Added to every list. -->
+		<button mv-action="delete(storeUnique)">Clear list</button>
+		<hr>
+		<div class="mv-container" mv-list="" property="storeUnique"><div property="storeUnique" mv-multiple="" mv-list-item="" aria-label="Store unique" class="">target</div><div property="storeUnique" mv-multiple="" mv-list-item="" aria-label="Store unique" class="">taco bell</div><div property="storeUnique" mv-multiple="" mv-list-item="" aria-label="Store unique" class="">walmart</div><!--mv-marker--></div>
+		<p>I'm at <input type="text" property="currentStore" mv-mode="edit" aria-label="Current store"></p>
+	</div>
+	<div style="background-color: #F7E1D7">
+		<p class="header">Frequently bought items</p>
+		<button mv-action="delete(frequentlyBought)">Clear list</button>
+		<div class="mv-container" mv-list="" property="frequentlyBought" mv-initial-items="0"><div property="frequentlyBought" mv-multiple="" mv-group="" mv-list-item="" mv-mode="edit">
+			<input type="text" property="name" mv-mode="edit" aria-label="Name" value="hello" class="">
+			from <span property="store" aria-label="Store" class="" mv-mode="edit"><input placeholder="(Store)" value="target" class="mv-editor" style="width: 52px;"></span>
+
+			<button mv-action="add(frequentlyBought, item)">Add to shopping list</button>
+		<div class="mv-item-bar mv-ui" mv-rel="frequentlyBought" hidden=""><button type="button" title="Delete this frequently bought" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new frequently bought before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder frequently bought" class="mv-move mv-drag-handle"></button></div></div><div property="frequentlyBought" mv-multiple="" mv-group="" mv-list-item="" mv-mode="edit">
+			<input type="text" property="name" mv-mode="edit" aria-label="Name" value="pizza" class="">
+			from <span property="store" aria-label="Store" class="" mv-mode="edit"><input placeholder="(Store)" value="taco bell" class="mv-editor" style="width: 67px;"></span>
+
+			<button mv-action="add(frequentlyBought, item)">Add to shopping list</button>
+		<div class="mv-item-bar mv-ui" mv-rel="frequentlyBought" hidden=""><button type="button" title="Delete this frequently bought" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new frequently bought before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder frequently bought" class="mv-move mv-drag-handle"></button></div></div><div property="frequentlyBought" mv-multiple="" mv-group="" mv-list-item="" mv-mode="edit">
+			<input type="text" property="name" mv-mode="edit" aria-label="Name" value="pizza" class="">
+			from <span property="store" aria-label="Store" class="" mv-mode="edit"><input placeholder="(Store)" value="walmart" class="mv-editor" style="width: 69.5px;"></span>
+
+			<button mv-action="add(frequentlyBought, item)">Add to shopping list</button>
+		<div class="mv-item-bar mv-ui" mv-rel="frequentlyBought" hidden=""><button type="button" title="Delete this frequently bought" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new frequently bought before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder frequently bought" class="mv-move mv-drag-handle"></button></div></div><div property="frequentlyBought" mv-multiple="" mv-group="" mv-list-item="" mv-mode="edit">
+			<input type="text" property="name" mv-mode="edit" aria-label="Name" value="pizza" class="">
+			from <span property="store" aria-label="Store" class="" mv-mode="edit"><input placeholder="(Store)" value="target" class="mv-editor" style="width: 52px;"></span>
+
+			<button mv-action="add(frequentlyBought, item)">Add to shopping list</button>
+		<div class="mv-item-bar mv-ui" mv-rel="frequentlyBought" hidden=""><button type="button" title="Delete this frequently bought" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new frequently bought before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder frequently bought" class="mv-move mv-drag-handle"></button></div></div><!--mv-marker--><button type="button" class="mv-ui mv-add mv-add-frequentlyBought" mv-action="add(frequentlyBought)">Add frequently bought</button></div>
+	</div>
+	<div style="background-color: #DEDBD2">
+		<p class="header">Items to buy</p>
+		<!-- Button that allows the user to display all items in the list, regardless of what store they are in -->
+		<button mv-action="delete(currentStore)">Display all items</button>
+		<button mv-action="delete(item)">Clear list</button>
+		<!-- Makes the shopping list an actual list, helps distinguish elements and allows for the user to see how many items are on their list -->
+		<ol mv-list="" property="item">
+			<li property="item" mv-multiple="" mv-list-item="" mv-group="" typeof="Item" mv-mode="edit">
+				<span property="name" aria-label="Name" class="" mv-mode="edit"><input placeholder="(Name)" value="pizza" class="mv-editor" style="width: 45px;"></span><br>
+				Store(s): <div class="mv-container" mv-list="" property="store"><span property="store" mv-multiple="" mv-list-item="" aria-label="Store" class="mv-drag-handle" tabindex="0" mv-mode="edit"><input placeholder="(Store)" value="target" class="mv-editor" style="width: 52px;"><div class="mv-item-bar mv-ui" mv-rel="store" hidden=""><button type="button" title="Delete this store" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new store before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button></div></span><!--mv-marker--><button type="button" class="mv-ui mv-add mv-add-store" mv-action="add(store)">Add store</button></div>
+				<br>
+				<form>
+					<!-- Made the amount optional, doesn't ask for an input unless the checkbox is clicked -->
+					<label>Add An Amount: </label>
+					<input type="checkbox" property="amount_needed" datatype="boolean" mv-mode="edit" aria-label="Amount needed" checked="true" class="">
+					<span> 
+						<input type="text" property="amount" mv-mode="edit" aria-label="Amount" value="3" class="mv-unsaved-changes">
+					</span>
+					<!-- Added a cost variable which keeps track of cost. Variable is optional. -->
+					<label>Add A Cost: </label>
+						<input type="checkbox" property="cost_needed" datatype="boolean" mv-mode="edit" aria-label="Cost needed" checked="true" class="">
+					<span>
+						$<input type="number" key="cost" property="cost" minimum="0" datatype="number" mv-mode="edit" aria-label="Cost" value="300.23" class="">
+					</span>
+				</form>
+				<br>
+				<button mv-action="move(item, alreadyBought)">Already bought</button>
+				<br>
+				<button mv-action="add(item, frequentlyBought)">Add to frequently bought</button>
+			<div class="mv-item-bar mv-ui mv-sticky" mv-rel="item"><button type="button" title="Delete this item" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new item before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder item" class="mv-move mv-drag-handle"></button></div></li><li property="item" mv-multiple="" mv-list-item="" mv-group="" mv-mode="edit">
+				<span property="name" aria-label="Name" class="" mv-mode="edit"><input placeholder="(Name)" value="hello" class="mv-editor" style="width: 37px;"></span><br>
+				Store(s): <div class="mv-container" mv-list="" property="store"><span property="store" mv-multiple="" mv-list-item="" aria-label="Store" class="mv-drag-handle" mv-mode="edit" tabindex="0"><input placeholder="(Store)" value="walmart" class="mv-editor" style="width: 69.5px;"><div class="mv-item-bar mv-ui" mv-rel="store" hidden=""><button type="button" title="Delete this store" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new store before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button></div></span><!--mv-marker--><button type="button" class="mv-ui mv-add mv-add-store" mv-action="add(store)">Add store</button></div>
+				<br>
+				<form>
+					<!-- Made the amount optional, doesn't ask for an input unless the checkbox is clicked -->
+					<label>Add An Amount: </label>
+					<input type="checkbox" property="amount_needed" datatype="boolean" mv-mode="edit" aria-label="Amount needed">
+					<span hidden="[!amount_needed]"> 
+						<input type="text" property="amount" mv-mode="edit" aria-label="Amount">
+					</span>
+					<!-- Added a cost variable which keeps track of cost. Variable is optional. -->
+					<label>Add A Cost: </label>
+						<input type="checkbox" property="cost_needed" datatype="boolean" mv-mode="edit" aria-label="Cost needed" checked="true" class="">
+					<span>
+						$<input type="number" key="cost" property="cost" minimum="0" datatype="number" mv-mode="edit" aria-label="Cost" value="200" class="">
+					</span>
+				</form>
+				<br>
+				<button mv-action="move(item, alreadyBought)">Already bought</button>
+				<br>
+				<button mv-action="add(item, frequentlyBought)">Add to frequently bought</button>
+			<div class="mv-item-bar mv-ui" mv-rel="item" hidden=""><button type="button" title="Delete this item" class="mv-delete" mv-action="delete($item)"></button><button type="button" title="Add new item before" class="mv-add" mv-action="if($cmd, add($item, $item), add($item))"></button><button type="button" title="Drag to reorder item" class="mv-move mv-drag-handle"></button></div></li><!--mv-marker--><button type="button" class="mv-ui mv-add mv-add-item" mv-action="add(item)">Add item</button>
+		</ol>
+			<meta property="costs1" content="300.23,200" aria-live="polite" mv-mode="read">
+			<meta property="total_cost" content="500.23" aria-live="polite" mv-mode="read" datatype="number">
+			<!-- Cost feature ensures the user will not go over their limit, allows them to make sure they have enough money -->
+			<div>
+				Total: $ 500.23
+			</div>
+	</div>
+	<div style="background-color: #B0C4B1">
+		<p class="header">Items already bought (from all stores)</p>
+		<button mv-action="delete(alreadyBought)">Clear list</button>
+		<ol mv-list="" property="alreadyBought">
+			<!-- Added a list that the user can add things to when they've already bought something, ensures that they have bought everything they wanted and keeps track of spending. -->
+			<li property="alreadyBought" mv-multiple="" mv-list-item="" mv-group="" typeof="Item">
+				<span property="name" aria-label="Name" class="mv-empty"></span> from <span property="store" aria-label="Store" class="mv-empty"></span> for $<span property="cost" aria-label="Cost" class="mv-empty"></span>
+				<button mv-action="move(alreadyBought, item)">Readd to shopping list</button>
+			</li><!--mv-marker--><button type="button" class="mv-ui mv-add mv-add-alreadyBought" mv-action="add(alreadyBought)">Add already bought</button>
+		</ol>
+		<meta property="costs2" content="" aria-live="polite" mv-mode="read">
+		<meta property="spent" content="0" aria-live="polite" mv-mode="read" datatype="number">
+		<p>Total spent: $0</p>
+	</div>
+
+
+</body></html>

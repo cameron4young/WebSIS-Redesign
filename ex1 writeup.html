@@ -1,0 +1,199 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="writeup css.css"/>
+    <title>Exercise 1 Writeup</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="http://websis.mit.edu/"> Link to Original WEBSIS</a>
+            </li>
+            <li>
+                <a href="index.html"> Link to New WEBSIS</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <h1>Usability Improvements</h1>
+    <h2>Learnability</h2>
+    <p>First, I replaced the links on the page with buttons which provide clear feedback to users. The button colors contrast with the text inside of them the background and provide clear 
+        information scent for the users </p>
+    <code>
+        a:last-child {
+            transition-duration:.5s;
+            <span>background-color: #f6a800;</span>
+            <span>color: white;</span>
+            padding: 10px 32px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+          }
+
+          <span>a:last-child:hover{</span>
+            <span>background-color: #951734;</span>
+            <span>padding: 15px 37px;</span>
+          }
+
+          td {
+            <span>background-color: white;</span>
+            width: 100%;
+            padding: 10px 10px;
+          }
+    </code>
+    <img src="images/newwebsis1.png" alt="" width="50%" height="50%">
+    <img src="images/newwebsis2.png" alt="" width="50%" height="50%">
+    <h2>Efficiency</h2>
+    <p>The new buttons are much more distinguished with the yellow color, therefore removing the necessity of users having to search through the list. In addition, the text size and overall 
+        button size is much larger than the original, further making it easier for users to find the link they needed. Last, I more thoroughly added a divide between the two groups 
+        of buttons to reduce the amount the user has to think.
+    </p>
+    
+    <code>
+        a:last-child {
+            transition-duration:.5s;
+            <span>background-color: #f6a800;</span>
+            color: white;
+            padding: 10px 32px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            <span>font-size: 16px;</span>
+          }
+         
+          td {
+            <span>background-color: white;</span>
+            width: 100%;
+            padding: 10px 10px;
+          }
+
+          table {
+            position: static;
+            <span>outline: 1px solid;</span>
+            ...
+          }
+    </code>
+    <img src="images/newwebsis3.png" alt="" width="50%" height="50%">
+    <h2>Safety</h2>
+    <p>I added more space between buttons using padding to prevent errors. In addition, I added a feature where the buttons grow larger and change color so users are more aware of which buttons 
+        they are pressing.</p>
+    <code>
+        a:last-child {
+            transition-duration:.5s;
+            background-color: #f6a800;
+            color: white;
+            <span>padding: 10px 32px;</span>
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+          }
+
+          a:last-child:hover{
+            <span>background-color: #951734;</span>
+            <span>padding: 15px 37px;</span>
+          }
+    </code>
+    <img src="images/oldwebsis1.png" alt="" width="50%" height="50%">
+    <img src="images/newwebsis1.png" alt="" width="50%" height="50%">
+    <h1>Graphic Design Improvements</h1>
+    <h2>Contrast</h2>
+    <p>I changed the background cover from mint to white and grey in order to create contrast and make the buttons pop. </p>
+    <code>
+        body{
+            <span>background-color: #EBE9E9;</span>
+          }
+    </code>
+    <h2>Repetition</h2>
+    <p>I created a banner which included images of the same size and opacity</p>
+    <code>
+        div:first-of-type{
+            color: white;
+            background-color: #6D2316;
+            text-align:right;
+            position: sticky;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 100%;
+            height: 160px;
+          }        
+    </code>
+    <h2>Balance</h2>
+    <p>I spread out the pictures from website to create a balanced banner. The spread out images balance out the logo.</p>
+    <code>
+          div:first-of-type > img:first-child{
+            z-index: 1;
+            opacity: 1;
+          }
+          
+          div:first-of-type > img:nth-child(2){
+            width:25%;
+          }
+          
+          div:first-of-type > img:nth-child(3){
+            left: 25%;
+            width:25%;
+          }
+          
+          div:first-of-type > img:nth-child(4){
+            left:50%;
+            width:25%;
+          }
+          
+          div:first-of-type > img:nth-child(5){
+            left:75%;
+            width:25%;
+          }
+        
+    </code>
+    <h2>Visual Hierarchy</h2>
+    <p>Made the WEBSIS logo bigger than any of the photos or links on the page in order to create emphasis.</p>
+    <code>
+        div:first-of-type > img{
+            position:absolute;
+            <span>width: 414px;</span>
+            <span>height:160px;</span>
+            top: 0;
+            left: 0;
+            opacity:0.4;
+          }
+    </code>
+    <img src="images/oldwebsis2.png" alt="" width="50%" height="50%">
+    <img src="images/newwebsis3.png" alt="" width="50%" height="50%">
+    <h2>Consistency</h2>
+    <p>I used the same two colors throughout the entire website rather than using a the original mint color for the background. I also used the same shades of maroon and yellow for the 
+        buttons as the logo.</p>
+    <code>
+        body{
+            background-color: #EBE9E9;
+          }
+
+          a:last-child {
+            transition-duration:.5s;
+            <span>background-color: #f6a800;</span>
+            ...
+          }
+
+          a:last-child:hover{
+            <span>background-color: #951734;</span>
+            padding: 15px 37px;
+          }
+    </code>
+    <h2>Alignment</h2>
+    <p>I moved the table used in the HTML to the middle of the website.</p>
+    <code>
+        table {
+            position: static;
+            outline: 1px solid;
+            <span>margin-left:auto;</span>
+            width: 80%;
+            height: 10%;
+            padding: 10px 10px;
+          }
+    </code>
+</body>
+</html>

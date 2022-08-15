@@ -1,0 +1,27 @@
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size:35px;
+}
+
+p{
+    font-size:30px;
+}
+code {
+    font-size:20px;
+    display:block;
+    color:white;
+    background-color: black;
+    white-space: pre;
+}
+code > span{
+    outline: 1px solid red;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
